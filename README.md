@@ -1,24 +1,27 @@
-# README
+# Quake Log Parser
+## Introduction
+This project is a very simple [rails](http://guides.rubyonrails.org/) application that loads a log file (Quake Arena 3) and displays a report about the games parsed. The parser used by this application is located [here](https://bitbucket.org/lcdss/quake-log-parser).
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installation
+If you have docker installed at your host machine you can easily run the application without dirty your machine. So just follow the steps bellow.
 
-Things you may want to cover:
+- Clone the project
+  - `git clone https://github.com/lcdss/quake-log-parser.git`
 
-* Ruby version
+- Build and run the docker container
+  - `docker run -d -it --name quake-log-parser -p 3000:3000 -v "$PWD":/data/app lcdss/quake-log-parser /bin/bash`
 
-* System dependencies
+- Access the container
+  - `docker exec -it quake-log-parser bash`
 
-* Configuration
+- Install the project dependencies
+  - `bundle`
 
-* Database creation
+- Run the rails server (puma)
+  - `rails server`
 
-* Database initialization
+- Now access the app at [http://localhost:3000](http://localhost:3000)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Code Style
+- [Ruby](https://github.com/bbatsov/ruby-style-guide)
+- [Rails](https://github.com/bbatsov/rails-style-guide)
