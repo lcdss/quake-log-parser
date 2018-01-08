@@ -1,0 +1,71 @@
+// ----
+// Base
+// ----
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #eee;
+}
+
+// ------
+// Layout
+// ------
+.page {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-wrap {
+  display: block;
+  width: 80%;
+  padding: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.headline {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+// -------
+// Helpers
+// -------
+.float-right {
+  float: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+// -----
+// Alert
+// -----
+.alert-error {
+  padding: 10px;
+  border: 2px solid rgb(216, 87, 87);
+  background-color: rgb(235, 142, 142);
+}
+
+

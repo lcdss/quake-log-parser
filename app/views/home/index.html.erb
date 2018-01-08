@@ -1,0 +1,13 @@
+<div class="headline text-center">Quake Log Parser</div>
+
+<% flash.each do |key, value| %>
+  <div class="alert-<%= key %> mb-1">
+    <%= value %>
+  </div>
+<% end %>
+
+<%= form_tag('/', method: 'get', multipart: true) do %>
+  <%= label_tag(:log, 'Log: ') %>
+  <%= file_field_tag(:log) %>
+  <%= submit_tag('Send', { class: 'float-right' }) %>
+<% end %>
