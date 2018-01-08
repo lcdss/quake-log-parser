@@ -1,0 +1,31 @@
+<%= link_to('Back', '/', { class: 'button-link' }) %>
+
+<div class="games">
+  <% @log_data.games.each do |g| %>
+  <ul class="game-item">
+    <li><strong>ID:</strong> <%= g.id %></li>
+    <li><strong>Start time:</strong> <%= g.info[:start_at] %></li>
+    <li><strong>End time:</strong> <%= g.info[:end_at] %></li>
+    <li><strong>Hostname:</strong> <%= g.info[:hostname] %></li>
+    <li><strong>Total of kills:</strong> <%= g.total_kills %></li>
+    <li>
+      <strong>Players:</strong>
+      <% g.players.each do |p| %>
+        <%= p.name %><%= p.eql?(g.players.last) ? '' : ', ' %>
+      <% end %>
+    </li>
+    <li>
+      <strong>Performance:</strong>
+      <% g.players.each do |p| %>
+        <br><%= "#{p.name} (kills: #{p.performance[:kills]}, deaths: #{p.performance[:deaths]}, ratio: #{p.performance[:ratio]})" %>
+      <% end %>
+    </li>
+    <li>
+      <strong>Kills by means:</strong>
+      <% g.kills_by_means.keys.each do |k| %>
+        <br><%= "#{k.to_s.gsub(/_/, ' ')[4..-1].capitalize}: #{g.kills_by_means[k]}" %>
+      <% end %>
+    </li>
+  </ul>
+<% end %>
+</div>

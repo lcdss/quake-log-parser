@@ -68,4 +68,36 @@ body {
   background-color: rgb(235, 142, 142);
 }
 
+// -----
+// Button
+// -----
+.button-link {
+  text-decoration: none;
+  color: rgb(61, 155, 243);
+}
+
+
+// -----
+// Games
+// -----
+.games {
+  //
+}
+
+.game-item {
+  list-style: none;
+  padding: 10px;
+
+  &:not(:first-child) {
+    border-top: 3px solid #eee;
+  }
+
+  li {
+    padding: 10px;
+
+    &:hover {
+      background-color: #eee;
+    }
+  }
+}
 
